@@ -33,4 +33,4 @@ use App\Http\Controllers\PenerimaanController;
 
 //---------- Report----------
 Route::get('/range','ReportController@daterange')->name('cari');
-Route::get('/report',[ReportController::class,'index']);
+Route::get('/realisasi',[ReportController::class,'index']);
