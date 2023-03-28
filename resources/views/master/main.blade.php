@@ -234,10 +234,10 @@
 									<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/realisasi">Realisasi</a>
 								</li>
 								<li>
-									<a href="gallery.html">Tunggakan</a>
+									<a class="{{ ($title === "Tunggakan") ? 'active' : '' }}" href="gallery.html">Tunggakan</a>
 								</li>
 								<li>
-									<a href="timeline.html">DHKP</a>
+									<a class="{{ ($title === "DHKP") ? 'active' : '' }}" href="/dhkp">DHKP</a>
 								</li>
 							</ul>
                     </li>
