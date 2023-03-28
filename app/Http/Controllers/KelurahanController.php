@@ -43,7 +43,7 @@ $hasil =  DB::table
                      SUM(pembayaran_sppt.jml_sppt_yg_dibayar) as realisasi_total
                      ')
                  
-             ->where('sppt.thn_pajak_sppt',2022) 
+             ->where('sppt.thn_pajak_sppt',$tahun) 
              ->groupBy('ref_kelurahan.nm_kelurahan')
              ->orderBy ('ref_kelurahan.nm_kelurahan','asc')
 

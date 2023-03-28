@@ -38,7 +38,7 @@ class KecamatanController extends Controller
                     SUM(pembayaran_sppt.jml_sppt_yg_dibayar) as realisasi_total')
        
         
-                    ->where('sppt.thn_pajak_sppt',2022)
+                    ->where('sppt.thn_pajak_sppt',$tahun)
                     ->groupBy('ref_kecamatan.nm_kecamatan')
                     ->get();
         return view('content.kecamatan', compact('hasil'),["title" => "Kecamatan"]); 

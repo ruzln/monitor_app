@@ -32,7 +32,7 @@ class DashboardController extends Controller
             (SUM(pembayaran_sppt.jml_sppt_yg_dibayar)- SUM(pembayaran_sppt.denda_sppt))/SUM(sppt.pbb_yg_harus_dibayar_sppt)*100 as persen
             ')
             
-            ->where('sppt.thn_pajak_sppt',2022)
+            ->where('sppt.thn_pajak_sppt',$tahun)
             ->get();
     //    dd(compact('result'));
          return view('home', ["title" => "Dashboard"],compact('result')); 

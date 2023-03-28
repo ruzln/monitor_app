@@ -10,11 +10,11 @@ class PenerimaanController extends Controller
 {
     public function index(){
 
-    $tahunawal   = '2018';
-    $tahunakhir  = Carbon::now()->format('Y');
-    // $tgl    = date('Y-m-d');
-    $tgl1    = date('Y-m-d',strtotime('2022-09-20'));
-    $tgl2    = date('Y-m-d',strtotime('2022-11-31'));
+    // $tahunawal   = '2018';
+    $tahun  = Carbon::now()->format('Y');
+    $tgl    = date('Y-m-d');
+    // $tgl1    = date('Y-m-d',strtotime('2022-09-20'));
+    // $tgl2    = date('Y-m-d',strtotime('2022-11-31'));
 
     $totalbayar=DB::table('sppt')
                 ->leftJoin('pembayaran_sppt', [
@@ -29,8 +29,10 @@ class PenerimaanController extends Controller
                 ])
                 ->selectRaw
                         ('SUM(pembayaran_sppt.jml_sppt_yg_dibayar) as total_hari_ini')
-                        ->whereBetween('sppt.thn_pajak_sppt', [$tahunawal,$tahunakhir])
-                        ->whereBetween('sppt.tgl_pembayaran_sppt', [$tgl1,$tgl2])
+                        // ->whereBetween('sppt.thn_pajak_sppt', [$tahunawal,$tahunakhir])
+                        // ->whereBetween('sppt.tgl_pembayaran_sppt', [$tgl1,$tgl2])
+                        ->where('sppt.thn_pajak_sppt', $tahun)
+                        ->where('sppt.tgl_pembayaran_sppt',$tgl)
                         ->get();
 
     $result = DB::table('sppt')
@@ -52,8 +54,8 @@ class PenerimaanController extends Controller
     
                 ])    
                     ->where('sppt.status_pembayaran_sppt', 1)
-                    ->whereBetween('sppt.thn_pajak_sppt', [$tahunawal,$tahunakhir])
-                    ->whereBetween('sppt.tgl_pembayaran_sppt', [$tgl1,$tgl2])
+                    ->where('sppt.thn_pajak_sppt', $tahun)
+                    ->where('sppt.tgl_pembayaran_sppt',$tgl)
                     ->get();
 
         return view('content.today', compact('result','totalbayar'),["title" => "Hari Ini"]);
