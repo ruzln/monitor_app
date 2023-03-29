@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KecController;
 use App\Http\Controllers\DHKPController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DashboardController;
