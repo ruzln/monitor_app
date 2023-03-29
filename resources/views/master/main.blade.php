@@ -43,8 +43,8 @@
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
 							<a href="index.html">
-								<img class="brand-img" src={{ asset('img/logo.png')}} alt="brand"/>
-								<span class="brand-text"><img  src={{ asset('img/brand.png')}} alt="brand"/></span>
+								<img class="brand-img" src="images/logo.jpg" alt="e-monitor"/>
+								<span class="brand-text">E-MONITOR</span>
 							</a>
 						</div>
 					</div>	
@@ -227,9 +227,19 @@
                     </li>
 					
 					<li>
-						<a class="{{ ($title === "Report") ? 'active' : '' }}" href="/report" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
+						<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="#" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
                             <span class="right-nav-text">Report</span></div><div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>
-							
+							<ul id="pages_dr" class="collapse collapse-level-1">
+								<li>
+									<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/realisasi">Realisasi</a>
+								</li>
+								<li>
+									<a class="{{ ($title === "Tunggakan") ? 'active' : '' }}" href="gallery.html">Tunggakan</a>
+								</li>
+								<li>
+									<a class="{{ ($title === "DHKP") ? 'active' : '' }}" href="/dhkp">DHKP</a>
+								</li>
+							</ul>
                     </li>
 
 				</ul>
