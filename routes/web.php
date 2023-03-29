@@ -28,9 +28,6 @@ use App\Http\Controllers\PenerimaanController;
  Route::get('/penerimaan',[PenerimaanController::class,'index']);
  Route::get('/kecamatan',[KecamatanController::class,'index']);
  Route::get('/kelurahan',[KelurahanController::class,'index']);
-// Route::get('/dhkp',[DHKPController::class,'index']);
-// Route::get('/piutang',[PiutangController::class,'index']);
-// Route::get('/realisasi',[RealisasiController::class,'index']);
 
 //---------- Report----------
 Route::get('/range','ReportController@daterange')->name('cari');
