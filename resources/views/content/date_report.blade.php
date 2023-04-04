@@ -6,19 +6,10 @@
         <div class="panel panel-default border-panel card-view">
             <div class="panel-heading">
                 <div class="col-md-4">  
-                    <h6 class="panel-title txt-dark">Laporan</h6>
+                    <h6 class="panel-title txt-dark">Laporan Realisasi</h6>
                 </div>
                 <div class="col-md-6 pull-right">
-                    
-					<form action="{{ route('cari') }}" method="GET">                                                   
-                                    <label >Range date tgl bayar</label>                                
-                                        
-                                            <input type="date"  name="start_date">
-                                            <input type="date"  name="end_date">
-                                                                                                                                                                                 
-                        <button type="submit" class="btn btn-success mr-10">Submit</button>
-                    </form>
-                
+                                    
 				</div>
                 <div class="clearfix"></div>
             </div>
@@ -38,6 +29,7 @@
 										<th>Bumi</th>
 										<th>Bangunan</th>
 										<th>PBB</th>
+										<th>Tgl Bayar</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -48,10 +40,11 @@
 										<td>{{ $item->kd_propinsi }}.{{ $item->kd_dati2}}.{{ $item->kd_kecamatan}}.{{$item->kd_kelurahan  }}.{{$item->kd_blok  }}.{{$item->no_urut}}.{{$item->kd_jns_op}}</td>
 										<td>{{ $item->nm_wp_sppt  }}</td>
 										<td>{{ $item->jln_wp_sppt  }}</td>
-										<td>#</td>
+										<td>{{ $item->jalan_op }}</td>
 										<td>{{ $item->luas_bumi_sppt  }}&nbsp;m²</td>
 										<td>{{ $item->luas_bng_sppt  }}&nbsp;m²</td>
-										<td>@currency( $item->pbb_yg_harus_dibayar_sppt )</td>
+										<td>@currency( $item->pbb_yg_harus_dibayar_sppt )</td>																				
+										<td> {{ Carbon\Carbon::parse($item->tgl_pembayaran_sppt)->format('d-m-Y')  }}</td>
 									</tr>
 									@endforeach
 								</tbody>
