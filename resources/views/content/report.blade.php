@@ -1,7 +1,7 @@
 @extends('master.main')
 @section('content')
 <!-- Row -->
-<div class="row">
+{{-- <div class="row">
 	<div class="col-sm-12">
         <div class="panel panel-default border-panel card-view">
             <div class="panel-heading">
@@ -62,6 +62,125 @@
 			</div>
         </div>
 	</div>
-</div>
+</div> --}}
+
+					<!-- Row -->
+					<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-default border-panel card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">Realisasi Per Kecamatan</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-12 col-xs-12">
+												<div class="form-wrap">
+													<form action="{{ route('cari') }}" method="GET">
+														<div class="form-group ">
+															<label class="control-label mb-10" for="exampleInputuname_1">Tanggal Pembayaran</label>
+															<div class="input-group col-md-12">																
+																	<input type="date" name="start_date" class="form-control id="exampleInputuname_1" >
+																<div class="input-group-addon "><i class="">s/d</i></div>
+															   		<input type="date" name="end_date" class="form-control" id="exampleInputuname_1" >
+															</div>															
+														</div>
+														
+														<div class="form-group">
+															<label class="control-label mb-10" for="exampleInputEmail_1">Kecamatan</label>
+															<div class="input-group col-md-12">
+																<select  name="kecamatan" class="form-control col-md-6 " data-style="form-control btn-default btn-outline">
+																	<option value="">Pilih</option>
+																	@foreach ($kec as $item)
+																		<option value="{{ $item->kd_kecamatan }}">{{ $item->nm_kecamatan }}</option>
+																	@endforeach
+																</select>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="control-label mb-10" for="exampleInputEmail_1">Tahun Pajak</label>
+															<div class="input-group col-md-12">
+																{{-- waiting --}}
+																<?php
+																	$now=date('Y');
+																	echo "<select class='form-control col-md-6' data-style='form-control btn-default btn-outline' name='tahun'>";
+																		echo "<option value=''>Pilih Tahun </option>";
+																		for ($a=2018;$a<=$now;$a++)
+																		{																		
+																		echo "<option value='$a'>$a</option>";
+																	}
+																	echo "</select>";
+																?>
+															</div>
+														</div>
+
+
+														<button type="submit" class="btn btn-success mr-10">Submit</button>
+													
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="panel panel-default border-panel card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">Realisasi Per Tahun Pajak</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-12 col-xs-12">
+												<div class="form-wrap">
+													<form action="{{ route('cari') }}" method="GET">
+														<div class="form-group ">
+															<label class="control-label mb-10" for="exampleInputuname_1">Tanggal Pembayaran</label>
+															<div class="input-group col-md-12">																
+																	<input type="date" name="start_date" class="form-control id="exampleInputuname_1" >
+																<div class="input-group-addon "><i class="">s/d</i></div>
+															   		<input type="date" name="end_date"class="form-control" id="exampleInputuname_1" >
+															</div>															
+														</div>
+														
+														<div class="form-group">
+															<label class="control-label mb-10" for="exampleInputEmail_1">Tahun Pajak</label>
+															<div class="input-group col-md-12">
+																{{-- waiting --}}
+																<?php
+																	$now=date('Y');
+																	echo "<select class='form-control col-md-6' data-style='form-control btn-default btn-outline' name='tahun'>";
+																		echo "<option value=''>Pilih Tahun </option>";
+																		for ($a=2018;$a<=$now;$a++)																	
+																		{																		
+																		echo "<option value='$a'>$a</option>";
+																	}
+																	echo "</select>";
+																?>
+															</div>
+														</div>
+
+														<button type="submit" class="btn btn-success mr-10">Submit</button>
+													
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- /Row -->
 <!-- /Row -->  
 @endsection
