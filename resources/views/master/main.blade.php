@@ -15,13 +15,15 @@
 	<!-- Data table CSS -->
 	<link href={{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css')}} rel="stylesheet" type="text/css"/>
 	
-	<!-- Toast CSS -->
-	<link href={{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css')}} rel="stylesheet" type="text/css">
-	
+	<!-- select2 CSS -->
+	<link href="../vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
+
 	<!-- bootstrap-select CSS -->
 	<link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
 
-
+	<!-- Toast CSS -->
+	<link href={{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css')}} rel="stylesheet" type="text/css">
+	
 
 	<!-- Custom CSS -->
 	<link href={{ asset('dist/css/style.css')}} rel="stylesheet" type="text/css">
@@ -739,11 +741,18 @@
 	<!-- Owl JavaScript -->
 	<script src={{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js')}}></script>
 
+	<!-- Select2 JavaScript -->
+	<script src="../vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+		
 	<!-- Bootstrap Select JavaScript -->
 	<script src="../vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	
 
 	<!-- Switchery JavaScript -->
 	<script src={{ asset('vendors/bower_components/switchery/dist/switchery.min.js')}}></script>
+
+	<!-- Select2 JavaScript -->
+	<script src="../vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
 
 	<!-- Init JavaScript -->
 	<script src={{ asset('dist/js/init.js')}}></script>
