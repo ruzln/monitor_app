@@ -23,10 +23,12 @@ class ReportController extends Controller
         //              // dd($result);  
         return view('content.report',compact('kec'),["title" => "Report"]);
     }
-    public function RangeRealisasi (Request $request){
+    // Funnction Realisasi
+    public function Filter_realisasi (Request $request){
      
         $kec        = RefKecamatan::all();
-        $tahun      = (request()->tahun);
+        $tahun_akhir= (request()->tahun_awal);
+        $tahun_awal = (request()->tahun_akhir);
         $kecamatan  = (request()->kecamatan);
         $start_date = Carbon::parse(request()->start_date)->format('Y-m-d');
         $end_date   = Carbon::parse(request()->end_date)->format('Y-m-d');
@@ -62,7 +64,7 @@ class ReportController extends Controller
 
 // Pencarian berdasarkan Tahun Pajak
         if (!empty($request->query('tahun'))) {
-            $result = $cek->where('sppt.thn_pajak_sppt', $request->query('tahun'));
+            $result = $cek->where('sppt.thn_pajak_sppt', $tahun_awal,$tahun_akhir);
         }
 // Pencarian berdasarkan Kecamatan     
         if (!empty($request->query('kecamatan'))) {
@@ -74,7 +76,47 @@ class ReportController extends Controller
          }
              $result= $cek ->get();
             // dd($result);
-            return view('content.date_report',compact('result','kec'),["title" => "Report"]);
+            return view('content.realisasi_report',compact('result','kec'),["title" => "Report"]);
           
     }
+
+    // Funnction Tunggakan
+        public function Filter_tunggakan (Request $request){
+                
+            $tahunpajak_awal  = (request()->tahunpajak_awal);
+            $tahunpajak_akhir  = (request()->tahunpajak_akhir);
+            $kecamatan  = (request()->kecamatanop);
+    
+    // query join
+            $cek = DB::table('sppt')                
+            ->leftJoin('dat_objek_pajak', [
+       
+                ['sppt.kd_propinsi',    '=', 'dat_objek_pajak.kd_propinsi'],
+                ['sppt.kd_dati2',       '=', 'dat_objek_pajak.kd_dati2'],
+                ['sppt.kd_kecamatan',   '=', 'dat_objek_pajak.kd_kecamatan'],
+                ['sppt.kd_kelurahan',   '=', 'dat_objek_pajak.kd_kelurahan'],
+                ['sppt.kd_blok',        '=', 'dat_objek_pajak.kd_blok'],
+                ['sppt.no_urut',        '=', 'dat_objek_pajak.no_urut'],
+                ['sppt.kd_jns_op',      '=', 'dat_objek_pajak.kd_jns_op']
+            ])
+            ->leftJoin('ref_kelurahan', [
+       
+                ['sppt.kd_kecamatan',   '=', 'ref_kelurahan.kd_kecamatan'],
+                ['sppt.kd_kelurahan',   '=', 'ref_kelurahan.kd_kelurahan'],
+            ])
+             ->where('sppt.status_pembayaran_sppt', 0);
+    // Pencarian berdasarkan Tahun Pajak
+            if (!empty($request->query('tahunpajak_awal','tahunpajak_akhir'))) {
+                $result = $cek->whereBetween('sppt.thn_pajak_sppt', [$tahunpajak_awal,$tahunpajak_akhir]);
+            }
+    // Pencarian berdasarkan Kecamatan     
+            if (!empty($request->query('kecamatanop'))) {
+                 $result = $cek->where('sppt.kd_kecamatan', $request->query('kecamatanop'));
+            }
+
+                 $result= $cek ->get();
+                // dd($result);
+                return view('content.tunggakan_report',compact('result'),["title" => "Report"]);
+              
+        }
 }
