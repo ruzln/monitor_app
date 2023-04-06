@@ -162,42 +162,7 @@
 						<li>
 							<a id="open_right_sidebar" href="#"><i class="zmdi zmdi-settings  top-nav-icon"></i></a>
 						</li>
-						{{-- <li class="dropdown auth-drp">
-							<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src={{ asset('img/user1.png')}} alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span><span class="inline-block"> <span class="ti-angle-down"></span></span></a>
-							<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-								<li>
-									<a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
-								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
-								</li>
-								<li>
-									<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
-								</li>
-								<li class="divider"></li>
-								<li class="sub-menu show-on-hover">
-									<a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
-									<ul class="dropdown-menu open-left-side">
-										<li>
-											<a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
-										</li>
-										<li>
-											<a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
-										</li>
-										<li>
-											<a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
-										</li>
-									</ul>	
-								</li>
-								<li class="divider"></li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-								</li>
-							</ul>
-						</li> --}}
+
 					</ul>
 				</div>	
 				</div>
@@ -229,19 +194,8 @@
                     </li>
 					
 					<li>
-						<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="#" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
+						<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/report" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
                             <span class="right-nav-text">Report</span></div><div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>
-							<ul id="pages_dr" class="collapse collapse-level-1">
-								<li>
-									<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/realisasi">Realisasi</a>
-								</li>
-								<li>
-									<a class="{{ ($title === "Tunggakan") ? 'active' : '' }}" href="gallery.html">Tunggakan</a>
-								</li>
-								<li>
-									<a class="{{ ($title === "DHKP") ? 'active' : '' }}" href="/dhkp">DHKP</a>
-								</li>
-							</ul>
                     </li>
 
 				</ul>
