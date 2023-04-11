@@ -51,12 +51,12 @@
                                             </span>
                                     </div>
                                     <div class="col-xs-3 text-center  pl-0 pr-0 data-wrap-right">
-                                        <i class="zmdi zmdi-trending-up data-right-rep-icon bg-grad-info"></i>
+                                        <i class="zmdi zmdi-trending-up data-right-rep-icon bg-grad-warning"></i>
                                     </div>
                                 </div>
                                 <div class="progress-anim">
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-grad-success 
+                                        <div class="progress-bar progress-bar-grad-warning 
                                         wow animated progress-animated" role="progressbar" aria-valuenow="{{ $p->realisasi_pokok/$p->target*100 }}" aria-valuemin="0" aria-valuemax="{{ $p->target }}"></div>
                                     </div>
                                 </div>
@@ -83,12 +83,12 @@
                                         </span>
                                     </div>
                                     <div class="col-xs-3 text-center  pl-0 pr-0 data-wrap-right">
-                                        <i class="zmdi zmdi-assignment-check data-right-rep-icon bg-grad-info"></i>
+                                        <i class="zmdi zmdi-assignment-check data-right-rep-icon bg-grad-sunset"></i>
                                     </div>
                                 </div>
                                 <div class="progress-anim">
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-grad-success 
+                                        <div class="progress-bar progress-bar-grad-primary 
                                         wow animated progress-animated" role="progressbar" aria-valuenow="{{ $p->realisasi_pokok/$p->target*100 }}" aria-valuemin="0" aria-valuemax="{{ $p->target }}"></div>
                                     </div>
                                 </div>
