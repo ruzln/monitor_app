@@ -23,12 +23,13 @@ use App\Http\Controllers\PenerimaanController;
 //     return view('welcome');
 // });
 
+//---------- Menu ----------//
  Route::get('/',[DashboardController::class,'index']);
  Route::get('/penerimaan',[PenerimaanController::class,'index']);
  Route::get('/kecamatan',[KecamatanController::class,'index']);
  Route::get('/kelurahan',[KelurahanController::class,'index']);
 
-//---------- Report----------
+//---------- Report----------//
 Route::get('/searchbayar',[ReportController::class,'Filter_realisasi'])->name('cari_realisasi');
 Route::get('/searctunggakan',[ReportController::class,'Filter_tunggakan'])->name('cari_tunggakan');
 Route::get('/report',[ReportController::class,'index']);
