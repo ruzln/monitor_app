@@ -27,8 +27,8 @@ class ReportController extends Controller
     public function Filter_realisasi (Request $request){
      
         $kec        = RefKecamatan::all();
-        $tahun_akhir= (request()->tahun_awal);
-        $tahun_awal = (request()->tahun_akhir);
+        $tahun_akhir= (request()->tahun_akhir);
+        $tahun_awal = (request()->tahun_awal);
         $kecamatan  = (request()->kecamatan);
         $start_date = Carbon::parse(request()->start_date)->format('Y-m-d');
         $end_date   = Carbon::parse(request()->end_date)->format('Y-m-d');
@@ -63,8 +63,8 @@ class ReportController extends Controller
          ->where('sppt.status_pembayaran_sppt', 1);
 
 // Pencarian berdasarkan Tahun Pajak
-        if (!empty($request->query('tahun'))) {
-            $result = $cek->where('sppt.thn_pajak_sppt', $tahun_awal,$tahun_akhir);
+        if (!empty($request->query('tahun_awal','tahun_akhir'))) {
+            $result = $cek->whereBetween('sppt.thn_pajak_sppt',[ $tahun_awal,$tahun_akhir]);
         }
 // Pencarian berdasarkan Kecamatan     
         if (!empty($request->query('kecamatan'))) {
@@ -80,7 +80,7 @@ class ReportController extends Controller
           
     }
 
-    // Funnction Tunggakan
+    // Function Tunggakan
         public function Filter_tunggakan (Request $request){
                 
             $tahunpajak_awal  = (request()->tahunpajak_awal);
