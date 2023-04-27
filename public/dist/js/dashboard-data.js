@@ -147,21 +147,6 @@ $(document).ready(function(){
 });
 /*****Ready function end*****/
 
-/*****Load function start*****/
-$(window).on("load",function(){
-	window.setTimeout(function(){
-		$.toast({
-			heading: 'Welcome to Splasher',
-			text: 'Use the predefined ones, or specify a custom position object.',
-			position: 'bottom-right',
-			loaderBg:'#e8af48',
-			icon: 'warning',
-			hideAfter: 3500, 
-			stack: 6
-		});
-	}, 3000);
-});
-/*****Load function* end*****/
 
 /*****E-Charts function start*****/
 var echartsConfig = function() {
