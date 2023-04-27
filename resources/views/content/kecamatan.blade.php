@@ -6,7 +6,7 @@
         <div class="panel panel-default border-panel card-view">
             <div class="panel-heading">
                 <div class="pull-left">
-                    <h6 class="panel-title txt-dark">penerimaan pbb sampai dengan : {{ Carbon\Carbon::now()->isoFormat("dddd, D MMMM Y") }}</h6>
+                    <h6 class="panel-title txt-dark">realisasi s/d : {{ Carbon\Carbon::now()->isoFormat("dddd, D MMMM Y") }}</h6>
                 </div>
                 <div class="clearfix"></div>
             </div>
