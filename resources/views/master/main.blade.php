@@ -44,7 +44,7 @@
 				<div class="mobile-only-brand pull-left">
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
-							<a href="index.html">
+							<a href="/">
 								<img class="brand-img" src="images/logo.jpg" alt="e-monitor"/>
 								<span class="brand-text">E-MONITOR</span>
 							</a>
@@ -68,29 +68,29 @@
 			<div class="fixed-sidebar-left">
 				<ul class="nav navbar-nav side-nav nicescroll-bar">
 					<li class="navigation-header">
-						<span>Main</span> 
+						<span>Menu</span> 
 						<hr/>
 					</li>
 					<li>
-						<a class="{{ ($title === "Dashboard") ? 'active' : '' }}" href="/" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="ti-dashboard mr-20"></i>
-                            <span class="right-nav-text">Dashboard</span></div><div class="pull-right"><i class="ti-angle-down"></i></div><div class="clearfix"></div></a>						
+						<a class="{{ ($title === "Dashboard") ? 'active' : '' }}" href="/" data-toggle="collapse" data-target="#dashboard_dr"><div class="pull-left"><i class="ti-home mr-20"></i>
+                            <span class="right-nav-text">Dashboard</span></div><div class="pull-right"></div><div class="clearfix"></div></a>						
 					</li>
 					<li>
-						<a class="{{ ($title === "Hari Ini") ? 'active' : '' }}" href="/penerimaan" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="ti-shopping-cart  mr-20"></i>
-                            <span class="right-nav-text">Penerimaan PBB </span></div><div class="pull-right"><i class="ti-angle-down"></i></div><div class="clearfix"></div></a>
+						<a class="{{ ($title === "Hari Ini") ? 'active' : '' }}" href="/penerimaan" data-toggle="collapse" data-target="#ecom_dr"><div class="pull-left"><i class="ti-image  mr-20"></i>
+                            <span class="right-nav-text">Monitoring PBB </span></div><div class="pull-right"></div><div class="clearfix"></div></a>
                     </li>
 					<li>
-						<a class="{{ ($title === "Kecamatan") ? 'active' : '' }}" href="/kecamatan" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="ti-image mr-20"></i>
-                            <span class="right-nav-text">Penerimaan Kecamatan </span></div><div class="pull-right"><i class="ti-angle-down"></i></div><div class="clearfix"></div></a>
+						<a class="{{ ($title === "Kecamatan") ? 'active' : '' }}" href="/kecamatan" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="ti-menu-alt mr-20"></i>
+                            <span class="right-nav-text">Penerimaan Kecamatan </span></div><div class="pull-right"></div><div class="clearfix"></div></a>
 					</li>
 					<li>
 						<a class="{{ ($title === "Desa/Kelurahan") ? 'active' : '' }}" href="/kelurahan" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
-                            <span class="right-nav-text">Penerimaan Desa/Kelurahan</span></div><div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>
+                            <span class="right-nav-text">Penerimaan Desa/Kelurahan</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
                     </li>
 					
 					<li>
-						<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/report" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-pencil-alt  mr-20"></i>
-                            <span class="right-nav-text">Report</span></div><div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>
+						<a class="{{ ($title === "Realisasi") ? 'active' : '' }}" href="/report" data-toggle="collapse" data-target="#ui_dr"><div class="pull-left"><i class="ti-printer  mr-20"></i>
+                            <span class="right-nav-text">Report</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
                     </li>
 
 				</ul>
@@ -110,7 +110,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6">
-							<p>2018 &copy; Splasher. Pampered by Hencework</p>
+							<p>{{ Carbon\Carbon::now()->isoFormat("Y") }} &copy; IT BAPENDA</p>
 						</div>
 						<div class="col-sm-6 text-right">
 							<p>Follow Us</p>
