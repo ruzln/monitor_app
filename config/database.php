@@ -36,8 +36,8 @@ return [
     'connections' => [
         'oracle' => [
 			'driver'         => 'oracle',
-			'tns'            => env('DB_TNS', '(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = "192.168.56.103")(PORT = "1521"))(CONNECT_DATA=(SERVICE_NAME = SIMPBB)))'),
-			'host'           => env('DB_HOST', '192.168.56.103'),
+			'tns'            => env('DB_TNS', '(DESCRIPTION=(ADDRESS = (PROTOCOL = TCP)(HOST = "192.168.88.1")(PORT = "1521"))(CONNECT_DATA=(SERVICE_NAME = SIMPBB)))'),
+			'host'           => env('DB_HOST', '192.168.88.1'),
 			'port'           => env('DB_PORT', '1521'),
 			'database'       => env('DB_DATABASE', 'PBB'),
 			'username'       => env('DB_USERNAME', 'PBB'),

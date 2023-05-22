@@ -29,6 +29,7 @@
                                         <th  class="text-center txt-light ">TAHUN PAJAK</th>
                                         <th  class="text-center txt-light ">DENDA</th>
                                         <th  class="text-center txt-light ">TOTAL BAYAR</th>
+                                        <th  class="text-center txt-light ">TGL BAYAR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +43,9 @@
                                             <td class="text-center">{{ $p->thn_pajak_sppt }}</td>
                                             <td class="text-right">@currency ($p->denda_sppt)</td>
                                             <td class="text-right">@currency ($p->jml_sppt_yg_dibayar)</td>
+                                            <td>{{ date('d-m-Y', strtotime( $p->tgl_pembayaran_sppt)) }}
+                                                {{-- {{ $p->tgl_pembayaran_sppt->Format("dddd, D MMMM Y") }} --}}
+                                            </td>
                                             </tr>
                                         @endforeach
 
