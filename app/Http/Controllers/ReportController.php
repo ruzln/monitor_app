@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
-
+   // Function Index
     public function index() {
         // $tahun      = Carbon::now()->format('Y');
         // $date       = date('Y-m-d');
@@ -23,7 +23,7 @@ class ReportController extends Controller
         //              // dd($result);  
         return view('content.report',compact('kec'),["title" => "Report"]);
     }
-    // Funnction Realisasi
+   // Function Realisasi
     public function Filter_realisasi (Request $request){
      
         $kec        = RefKecamatan::all();
@@ -33,7 +33,7 @@ class ReportController extends Controller
         $start_date = Carbon::parse(request()->start_date)->format('Y-m-d');
         $end_date   = Carbon::parse(request()->end_date)->format('Y-m-d');
 
-// query join
+    // query join
         $cek = DB::table('sppt')                
         ->leftJoin('pembayaran_sppt', [   
             ['sppt.kd_propinsi',    '=', 'pembayaran_sppt.kd_propinsi'],
@@ -62,30 +62,29 @@ class ReportController extends Controller
         ])
          ->where('sppt.status_pembayaran_sppt', 1);
 
-// Pencarian berdasarkan Tahun Pajak
+    // Pencarian berdasarkan Tahun Pajak
         if (!empty($request->query('tahun_awal','tahun_akhir'))) {
             $result = $cek->whereBetween('sppt.thn_pajak_sppt',[ $tahun_awal,$tahun_akhir]);
         }
-// Pencarian berdasarkan Kecamatan     
+    // Pencarian berdasarkan Kecamatan     
         if (!empty($request->query('kecamatan'))) {
              $result = $cek->where('sppt.kd_kecamatan', $request->query('kecamatan'));
         }
-// Pencarian berdasarkan Tanggal Bayar      
+    // Pencarian berdasarkan Tanggal Bayar      
         if (!empty($request->query('start_date','end_date'))) {
              $result= $cek ->whereBetween('sppt.tgl_pembayaran_sppt', [$start_date,$end_date]);              
          }
              $result= $cek ->get();
             // dd($result);
             return view('content.realisasi_report',compact('result','kec'),["title" => "Report"]);
-          
-    }
+          }
 
     // Function Tunggakan
-        public function Filter_tunggakan (Request $request){
+    public function Filter_tunggakan (Request $request){
                 
-            $tahunpajak_awal  = (request()->tahunpajak_awal);
-            $tahunpajak_akhir  = (request()->tahunpajak_akhir);
-            $kecamatan  = (request()->kecamatanop);
+            $tahunpajak_awal    = (request()->tahunpajak_awal);
+            $tahunpajak_akhir   = (request()->tahunpajak_akhir);
+            $kecamatan          = (request()->kecamatanop);
     
     // query join
             $cek = DB::table('sppt')                
